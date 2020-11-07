@@ -31,8 +31,19 @@ if not os.path.exists(gff):
 
 if not os.path.exists(fasta):
     os.system("curl -O ftp://ftp.ensemblgenomes.org/pub/bacteria/release-45/fasta/bacteria_0_collection/escherichia_coli_str_k_12_substr_mg1655/dna/Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.dna.chromosome.Chromosome.fa.gz")
-    
+# after this step I kept getting message errors such as this one curl: (23) Failed writing body (0 != 14480) I would run the file on python and would receive this  if not os.path.exists(fasta):
+...     os.system("curl -O ftp://ftp.ensemblgenomes.org/pub/bacteria/release-45/fasta/bacteria_0_collection/escherichia_coli_str_k_12_substr_mg --- Keep struggling with loading the data into python. 
+  File "<stdin>", line 2    
 with gzip.open(gff,"rt") as fh:
+#had I successfully loaded the data to python I would have first allowed the count_up_genes script to count the genes by 
+                Gene = "ATG"
+                  For row in gff: #since gff= Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.gff3.gz - the genome 
+               if row[1] startwith(Gene)   #start scanning the first row for ATG, since ATG is the start codon, only issue i see with this is how can I be sure that all the ATG will indeed be a gene.
+                  continue
+                if "Gene" for row[2] #contunie to scan for ATG and count each ATG as 1
+                  print(gene) # print total of ATG found, since i was unable to load the data to python i was not able to see if the script produced a number :/
+    
+             
     # now add code to process this
     gff = csv.reader(fh,delimiter="\t")
     for row in gff:

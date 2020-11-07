@@ -25,7 +25,10 @@ file2="Mycobacterium_tuberculosis_h37rv.ASM19595v2.cds.all.fa.gz"
 
 if not os.path.exists(file1):
     os.system("curl -O %s"%(url1))
-
+# I keep getting this error -- File "<stdin>", line 1 #I'm not sure what im doing wrong that i just can't seem to load the files to python. Had no issue with when using unix! 
+    os.system("curl -O %s"%(url2))
+    ^
+IndentationError: unexpected indent
 if not os.path.exists(file2):
     os.system("curl -O %s"%(url2))
 
@@ -36,3 +39,8 @@ with gzip.open(file1,"rt") as fh:
         seqname  = seq[0]
         seqstring= seq[1]
         print(seqname, " first 10 bases are ", seqstring[0:10])
+giff = (ftp://ftp.ensemblgenomes.org/pub/bacteria/release-45/fasta/bacteria_0_collection/salmonella_enterica_subsp_enterica_serovar_typhimurium_str_lt2/cds/Salmonella_enterica_subsp_enterica_serovar_typhimurium_str_lt2.ASM694v2.cds.all.fa.gz, ftp://ftp.ensemblgenomes.org/pub/bacteria/release-45/fasta/bacteria_0_collection/mycobacterium_tuberculosis_h37rv/cds/Mycobacterium_tuberculosis_h37rv.ASM19595v2.cds.all.fa.gz) #giff incorporates both sequences
+   for giff count = {'G' : 0, 'C' : 0}/ (len(giff) *100)) #count all the Gs and Cs from the two sequences and divide that by the total of nucleotides.
+    print (giff)
+    
+    
